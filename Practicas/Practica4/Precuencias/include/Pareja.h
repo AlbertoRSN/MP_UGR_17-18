@@ -1,0 +1,26 @@
+#ifndef PAREJA_H
+#define PAREJA_H
+
+class Pareja {
+	private:
+		int dato; // valor
+		int nveces; // numero de repeticiones
+		
+		void Copia(const Pareja& otra);
+	public:
+		Pareja();
+		Pareja(int dato, int veces);
+		Pareja(const Pareja& otra);
+		Pareja& operator=(const Pareja &otra);
+		~Pareja();
+		
+		int getDato();
+		void setDato(int dato);
+
+		int getNVeces();
+		void setNVeces(int veces);
+
+		void mostrar();
+};
+
+#endif

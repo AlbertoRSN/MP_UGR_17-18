@@ -1,0 +1,19 @@
+Si modificamos el fichero punto.h,¿que comandos serian necesarios volver a ejecutar para obtener de nuevo el ejecutable?. 
+	Habria que hacer los correspondientes cambios en punto.cpp, y despues usar los siguientes comandos para obtener los archivos objeto
+	compilados:
+		g++ -c punto.cpp -o punto.o
+		g++ -c circulo.cpp -o circulo.o 
+		g++ -c central.cpp -o central.o
+	
+	Y una vez disponemos de los archivos objeto, los enlazamos para obtener el ejecutable central con:
+		g++ central.o punto.o circulo.o -o central
+
+¿Y si modificamos circulo.cpp?.
+	En caso de que se cambiase la cabecera de un método o función habría que modificar circulo.h; si se modificase un dato
+	interno de un método o función no habria que modificar nada en circulo.h. En ambos casos habría que usar los comandos:
+		g++ -c circulo.cpp -o circulo.o 
+		g++ -c central.cpp -o central.o
+	
+	Una vez tenemos los archivos objeto correspondientes y actualizados por el cambio, los enlazamos para obtener el ejecutable
+	central con:
+		g++ central.o punto.o circulo.o -o central
